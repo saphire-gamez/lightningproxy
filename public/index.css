@@ -1,25 +1,41 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  --primary-bg: rgba(17, 17, 17, 0.8); /* Glassmorphism effect */
+  --primary-color: #fff;
+  --accent-color: #00c4ff;
+  --border-color: rgba(255, 255, 255, 0.2);
+}
 
 body {
-  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   margin: 0;
   background: #111;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  color: var(--primary-color);
+}
+
+header {
+  background: var(--primary-bg);
+  padding: 20px;
+  backdrop-filter: blur(10px); /* Glass effect */
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
 }
 
 .fa-magnifying-glass {
-  color: white;
+  color: var(--primary-color);
 }
 
 .flex-center {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .header-center {
-  align-items: center;
   flex-direction: column;
   margin-top: 10%;
 }
@@ -39,30 +55,31 @@ body {
 }
 
 #uv-error {
-  color: #ff6666 !important;
+  color: #ff6666;
   white-space: pre-wrap;
 }
 
 #uv-error-code {
   font-size: 12px;
-  color: #fff;
-  font-family: "Courier New", Courier, monospace;
+  color: var(--primary-color);
+  font-family: "Courier New", monospace;
 }
 
 #uv-register-sw {
-  color: white;
-  background: #555555;
+  color: var(--primary-color);
+  background: #333;
   cursor: pointer;
   outline: none;
   border: none;
-  border-radius: 6px;
-  padding: 16px 20px;
-  line-height: 16px;
+  border-radius: 8px;
+  padding: 14px 18px;
+  transition: background 0.3s, transform 0.2s;
   display: none;
 }
 
 #uv-register-sw:active {
-  background: #333333;
+  background: #222;
+  transform: scale(0.95);
 }
 
 #uv-register-sw.show {
@@ -70,99 +87,98 @@ body {
 }
 
 .logo {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Modern shadow */
 }
 
 .logo-wrapper .text {
-  font-size: 75px;
-  color: #fff;
+  font-size: 64px;
+  color: var(--primary-color);
 }
 
 .logo-wrapper h1 {
-  color: white;
+  color: var(--primary-color);
+  font-size: 3rem;
 }
 
 footer {
   margin: 0 5vw;
   margin-top: auto;
+  padding: 20px;
+  background: var(--primary-bg);
+  backdrop-filter: blur(10px);
   display: flex;
-  flex-direction: column;
-  line-height: 30px;
-  margin-bottom: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
 }
 
-footer > div {
+footer div {
   display: flex;
-  justify-content: left;
-  align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 15px;
 }
 
 footer a,
 footer span {
-  margin: 0 15px;
+  margin: 0 10px;
   text-decoration: none;
-  color: #fff;
-  font-size: 15px;
+  color: var(--primary-color);
+  font-size: 14px;
 }
 
 footer a {
   cursor: pointer;
+  transition: color 0.3s;
 }
 
 footer a:hover {
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
 .desc p {
-  width: 560px;
-  color: rgba(253, 253, 253, 0.514);
+  max-width: 600px;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 #uv-address {
   background: none;
-  font-family: inherit;
-  padding: 0px 17px;
+  padding: 12px 18px;
   height: 48px;
-  border: 1px solid rgb(255, 255, 255, 0.2);
-  color: var(--text-color);
-  border-radius: 3px;
+  border: 1px solid var(--border-color);
+  color: var(--primary-color);
+  border-radius: 25px;
   outline: none;
-  width: 350px;
-  margin-top: 5px;
-  border-radius: 50px;
-  color: #fff;
-  transition: border-radius 0.1s;
+  width: 100%;
+  max-width: 400px;
+  transition: border-radius 0.2s, border-color 0.3s;
 }
 
 #uv-address:focus {
-  border: 1px solid rgba(253, 253, 253, 0.514);
-  border-radius: 6px;
+  border: 1px solid var(--accent-color);
+  border-radius: 10px;
 }
 
 .credit {
-  border-radius: 10px;
-  padding: 10px;
-  display: block;
-  border: #fff 1px solid;
-  color: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-color);
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 15px;
 }
 
 .credit label {
-  margin-left: auto;
-  margin-right: 15px;
+  cursor: pointer;
+  color: var(--accent-color);
+  transition: color 0.3s;
 }
 
-.credit a,
-.credit label {
-  color: white;
-  text-decoration: underline;
-  text-align: right;
+.credit label:hover {
+  color: var(--primary-color);
 }
 
 .credit pre {
@@ -172,7 +188,6 @@ footer a:hover {
 
 .credit label::after {
   content: "show license";
-  cursor: pointer;
 }
 
 .credit input:checked + label::after {

@@ -1,6 +1,7 @@
 {
   "name": "uv-app",
   "version": "1.0.0",
+  "file": "static",
   "description": "Ultraviolet instance",
   "type": "module",
   "engines": {
